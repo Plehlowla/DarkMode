@@ -10,13 +10,14 @@ btn.addEventListener('click', () => {
 
 const articlesData = articles.map((item) => {
     // console.log(item)
-    const {title, date, length, snippet} = item;
+    const { title, date, length, snippet } = item;
     // format date
+    const formatDate = moment(date).format('MMMM Do, YYYY')
     return `<article class="post">
     <h2>${title}</h2>
     <div class="post-info">
-      <span>${date}</span>
-      <span${length}</span>
+      <span>${formatDate}</span>
+      <span>${length} min read</span>
     </div>
     <p>${snippet}</p>
   </article>`
@@ -25,4 +26,4 @@ const articlesData = articles.map((item) => {
 articlesDOM.innerHTML = articlesData;
 
 
-console.log(articles)
+console.log(moment)
